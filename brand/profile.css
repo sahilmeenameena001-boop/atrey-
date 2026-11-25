@@ -422,3 +422,130 @@
     }
   }
 }
+
+.appointment-dialog {
+  position: fixed;
+  inset: 0;
+  margin: auto;
+  width: min(39rem, calc(100% - 2rem));
+  max-height: calc(100dvh - 2rem);
+  overflow: auto;
+  padding: 0;
+  border: 1px solid #ad896c;
+  border-radius: 0.75rem;
+  background: #292420;
+  color: #f9f5ea;
+  color-scheme: dark;
+}
+
+.appointment-dialog::backdrop {
+  background: rgb(18 14 11 / 75%);
+}
+
+.appointment-header,
+.appointment-form {
+  padding: clamp(1.25rem, 4vw, 2rem);
+}
+
+.appointment-header {
+  position: relative;
+  padding-right: 4rem;
+  border-bottom: 1px solid #806953;
+}
+
+.appointment-header h2 {
+  margin-top: 0.55rem;
+  font-family: var(--sar-font-heading);
+  font-size: clamp(1.65rem, 5vw, 2.6rem);
+  line-height: 1.2;
+}
+
+.appointment-header em {
+  color: #dcc4ad;
+}
+
+.appointment-dialog .appointment-close,
+.appointment-dialog .appointment-submit {
+  border: 1px solid #ad896c;
+  cursor: pointer;
+}
+
+.appointment-dialog .appointment-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+}
+
+.appointment-form,
+.appointment-form label {
+  display: grid;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.appointment-form {
+  gap: 1rem;
+}
+
+.appointment-datetime {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.appointment-form :is(input, select, textarea) {
+  width: 100%;
+  min-width: 0;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid #806953;
+  border-radius: 0.25rem;
+  background: #3b3028;
+  color: #f9f5ea;
+}
+
+.appointment-note {
+  color: #ded2c6;
+  font-size: 0.875rem;
+}
+
+.appointment-dialog .appointment-submit {
+  justify-self: start;
+  border-radius: 999px;
+  padding: 0.65rem 1.25rem;
+  background: #f9f5ea;
+  color: #292420;
+}
+
+@media (max-width: 30rem) {
+  .appointment-datetime {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 48rem) {
+  .profile-site-header {
+    min-height: 114px;
+  }
+
+  .profile-header-nav,
+  .profile-header-nav nav {
+    gap: 20px;
+  }
+
+  .profile-header-nav nav a {
+    font: 400 14px/20px Arial, sans-serif;
+    text-transform: none;
+  }
+
+  .profile-header-nav [data-open-appointment] {
+    min-width: 100px;
+    min-height: 44px;
+    padding: 12px 14px;
+    font: 400 14px/20px Arial, sans-serif;
+  }
+}
