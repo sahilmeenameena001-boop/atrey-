@@ -150,10 +150,7 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
-.practice-card-grid p {
-  text-align: justify;
-  hyphens: auto;
-}
+
 
 .profile-eyebrow {
   color: inherit;
@@ -324,8 +321,7 @@
     grid-row: 2;
   }
 
-  .profile-team-bio p,
-  .practice-card-grid p {
+  .profile-team-bio p {
     text-align: start;
   }
 }
@@ -357,11 +353,6 @@
   text-transform: uppercase;
 }
 
-.practice-card-grid article {
-  display: flex;
-  flex-direction: column;
-}
-
 .practice-card-grid article > p:last-child {
   margin-top: auto;
   padding-top: 1rem;
@@ -387,5 +378,47 @@
 
   .profile-hero-stage .profile-header-inner > div:first-child:not(.profile-hero-values) {
     max-width: min(40%, 30rem);
+  }
+}
+
+.practice-card-grid ul {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-inline-start: 1.25rem;
+  list-style: disc;
+  line-height: 1.55;
+}
+
+.practice-card-grid li::marker {
+  color: var(--sar-color-primary);
+}
+
+.profile-footer-heading {
+  padding-bottom: clamp(1.5rem, 4vw, 3rem);
+}
+
+.profile-footer-heading h2 {
+  margin-top: 0.65rem;
+  font-family: var(--sar-font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+/* Share one row per heading and bullet across adjacent practice cards. */
+@supports (grid-template-rows: subgrid) {
+  @media (min-width: 40.001rem) {
+    .practice-card-grid article {
+      display: grid;
+      grid-row: span 4;
+      grid-template-rows: subgrid;
+      row-gap: 0.75rem;
+    }
+
+    .practice-card-grid ul {
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+      margin-top: 0;
+    }
   }
 }
