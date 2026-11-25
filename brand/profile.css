@@ -60,3 +60,332 @@
   text-decoration: underline;
   text-underline-offset: 0.25em;
 }
+
+/* Shared homepage alignment */
+:root {
+  --profile-gutter: clamp(1.25rem, 5vw, 4rem);
+  --profile-width: 72rem;
+}
+
+[data-sar-section^="home/"]:not(#hero) {
+  padding-inline: var(--profile-gutter);
+}
+
+[data-sar-section^="home/"]:not(#hero) > div {
+  width: 100%;
+  max-width: var(--profile-width);
+  margin-inline: auto;
+}
+
+.profile-header-inner {
+  max-width: calc(var(--profile-width) + 2 * var(--profile-gutter));
+  padding-inline: var(--profile-gutter);
+}
+
+.profile-hero-stage {
+  min-height: clamp(30rem, 73svh, 54rem);
+}
+
+.profile-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(1.5rem, 5vw, 4rem);
+}
+
+.profile-about-split {
+  align-items: start;
+}
+
+.profile-intro-copy h2 {
+  color: #292420;
+  font-family: var(--sar-font-heading);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+
+.profile-intro-copy p,
+#team p[data-reveal],
+.profile-about-split p:not(.uppercase),
+.profile-content p {
+  line-height: 1.65;
+}
+
+.profile-intro-copy p {
+  margin-top: 1.25rem;
+  color: #353a3c;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+}
+
+.profile-event-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+@media (min-width: 64rem) {
+  .profile-intro-copy p,
+  #team p[data-reveal],
+  .profile-about-split p:not(.uppercase),
+  .profile-content > p,
+  .profile-content > div > p {
+    text-align: justify;
+    hyphens: auto;
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .profile-split {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.profile-hero-stage > .profile-header-inner {
+  height: auto;
+  align-self: stretch;
+}
+
+.practice-card-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.practice-card-grid p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+.profile-eyebrow {
+  color: inherit;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.profile-content .profile-eyebrow {
+  margin: 0 0 0.75rem;
+}
+
+.profile-team {
+  display: grid;
+  grid-template-columns: minmax(217px, 15rem) minmax(0, 34rem);
+  column-gap: clamp(1.5rem, 5vw, 4rem);
+  row-gap: 0.75rem;
+  align-items: stretch;
+  margin: 0;
+}
+
+.profile-team img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.profile-team-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.profile-team-bio p {
+  margin: 0;
+  text-align: justify;
+  hyphens: auto;
+}
+
+.profile-team figcaption {
+  font-family: var(--sar-font-heading);
+  font-weight: 600;
+}
+
+.profile-practice-section,
+.profile-faq-section,
+.profile-footer {
+  width: 100%;
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+.profile-practice-section {
+  background: #f3eee7;
+}
+
+.profile-faq-section {
+  background: #fff;
+}
+
+.profile-section-heading {
+  text-align: center;
+}
+
+.profile-accordion {
+  border: 1px solid #d2c6b9;
+}
+
+.profile-accordion details + details {
+  border-top: 1px solid #d2c6b9;
+}
+
+.profile-accordion summary {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 1rem clamp(1rem, 3vw, 1.75rem);
+  font-family: var(--sar-font-heading);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 600;
+  list-style: none;
+}
+
+.profile-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.profile-accordion-index {
+  color: #796350;
+  font-weight: 400;
+}
+
+.profile-accordion-toggle {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 2rem;
+  margin-left: auto;
+  border: 1px solid #d2c6b9;
+}
+
+.profile-accordion-toggle::before {
+  content: "+";
+}
+
+.profile-accordion details[open] .profile-accordion-toggle::before {
+  content: "−";
+}
+
+.profile-accordion details p {
+  margin: 0;
+  padding: 0 clamp(1rem, 3vw, 1.75rem) 1.25rem;
+}
+
+.profile-accordion a,
+.profile-contact-links a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  overflow-wrap: anywhere;
+}
+
+.profile-footer {
+  background: #292420;
+  color: #f9f5ea;
+}
+
+.profile-footer-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) repeat(2, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.profile-footer-name {
+  margin-bottom: 0.75rem;
+  font-family: var(--sar-font-heading);
+  font-size: 1.5rem;
+  line-height: 1.25;
+}
+
+.profile-footer nav,
+.profile-contact-links {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: 0.65rem;
+}
+
+@media (max-width: 63.999rem) {
+  .practice-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 40rem) {
+  .practice-card-grid,
+  .profile-team,
+  .profile-footer-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .profile-team img {
+    max-width: 15rem;
+  }
+
+  .profile-team figcaption {
+    grid-row: 2;
+  }
+
+  .profile-team-bio p,
+  .practice-card-grid p {
+    text-align: start;
+  }
+}
+
+.profile-hero-values {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 9.5rem;
+  gap: 0.625rem;
+  text-align: center;
+}
+
+.profile-hero-values .value-pill {
+  background: rgba(28, 22, 18, 0.65);
+}
+
+.profile-contact-cta {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 0.75rem 1.25rem;
+  background: #f9f5ea;
+  color: #292420;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+}
+
+.practice-card-grid article {
+  display: flex;
+  flex-direction: column;
+}
+
+.practice-card-grid article > p:last-child {
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.profile-footer {
+  padding-bottom: 1.5rem;
+}
+
+.profile-footer > .profile-disclaimer {
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  padding-top: 1.25rem;
+  border-top: 1px solid #ad896c55;
+  color: #ded2c6;
+  font-size: 0.8125rem;
+  line-height: 1.65;
+}
+
+@media (min-width: 72rem) {
+  .profile-hero-values {
+    display: flex;
+  }
+
+  .profile-hero-stage .profile-header-inner > div:first-child:not(.profile-hero-values) {
+    max-width: min(40%, 30rem);
+  }
+}
