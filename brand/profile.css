@@ -549,3 +549,53 @@
     font: 400 14px/20px Arial, sans-serif;
   }
 }
+
+.profile-header-nav {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .profile-site-header [aria-controls="profile-header-menu"] {
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-header-nav {
+    display: none;
+    position: absolute;
+    inset: 100% 0 auto;
+    padding: 1rem var(--profile-gutter);
+    border-bottom: 1px solid #ad896c;
+    background: #292420;
+  }
+
+  .profile-site-header:has([aria-expanded="true"]) .profile-header-nav,
+  .profile-header-nav nav {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .profile-header-nav nav a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    text-transform: none;
+  }
+
+  .profile-header-nav [data-open-appointment] {
+    min-height: 44px;
+    margin-top: 0.5rem;
+  }
+
+  .atrey-hero-photo {
+    display: none;
+  }
+
+  .profile-hero-stage {
+    min-height: 0;
+    padding-block: clamp(3rem, 10vw, 5rem);
+  }
+}

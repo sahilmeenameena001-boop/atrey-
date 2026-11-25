@@ -39,3 +39,34 @@ appointmentForm.addEventListener("submit", (event) => {
   const subject = encodeURIComponent("Appointment request");
   window.location.href = `mailto:abhishekatrey@gmail.com?subject=${subject}&body=${encodeURIComponent(message)}`;
 });
+
+const menuToggle = document.querySelector('[aria-controls="profile-header-menu"]');
+const mobileMenu = document.querySelector("#profile-header-menu");
+const mobileViewport = window.matchMedia("(max-width: 767px)");
+
+function closeMobileMenu() {
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+menuToggle.addEventListener("click", () => {
+  const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+  menuToggle.setAttribute("aria-expanded", String(!expanded));
+});
+
+mobileMenu.addEventListener("click", (event) => {
+  if (mobileViewport.matches && event.target.closest("a, button")) {
+    closeMobileMenu();
+    if (appointmentDialog.open) {
+      appointmentDialog.addEventListener("close", () => menuToggle.focus(), { once: true });
+    }
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle.getAttribute("aria-expanded") === "true") {
+    closeMobileMenu();
+    menuToggle.focus();
+  }
+});
+
+mobileViewport.addEventListener("change", closeMobileMenu);
