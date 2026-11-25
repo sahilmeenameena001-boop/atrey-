@@ -1,0 +1,62 @@
+.profile-content {
+  display: grid;
+  gap: 2rem;
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  color: inherit;
+}
+
+#services .profile-content,
+#contact .profile-content,
+#about-us .profile-content,
+[data-sar-section="home/s05-content"] .profile-content {
+  color: #f9f5ea;
+}
+
+.profile-content h2,
+.profile-content h3 {
+  font-family: var(--sar-font-heading);
+  line-height: 1.2;
+}
+
+.profile-content h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.profile-content h3 {
+  font-size: 1.25rem;
+}
+
+.profile-content p {
+  margin-top: 0.75rem;
+  line-height: 1.65;
+}
+
+.profile-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.profile-cards article {
+  border: 1px solid var(--sar-color-primary);
+  padding: 1.25rem;
+}
+
+.profile-facts {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+}
+
+.profile-facts dt {
+  font-weight: 600;
+}
+
+.profile-link {
+  justify-self: start;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+}

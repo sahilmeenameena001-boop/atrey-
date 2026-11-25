@@ -1,0 +1,80 @@
+/* Generated from site.config.json. */
+:root {
+  --sar-color-primary: #ad896c;
+  --sar-color-accent: #292420;
+  --sar-color-text: #292420;
+  --sar-color-background: #ffffff;
+  --sar-color-color-1: #f3eee71a;
+  --sar-color-color-2: #f3eee70f;
+  --sar-color-color-3: #f3eee799;
+  --sar-color-color-4: #f3eee7;
+  --sar-color-color-5: #29242014;
+  --sar-color-color-6: #292420;
+  --sar-color-color-7: #29242000;
+  --sar-color-color-8: #ad896c40;
+  --sar-color-color-9: #f3eee733;
+  --sar-color-color-10: #f3eee712;
+  --sar-color-color-11: #ad896c1a;
+  --sar-color-color-12: #ad896c33;
+  --sar-color-auto-000000: #292420;
+  --sar-color-auto-0b0b0b: #292420;
+  --sar-color-auto-101828: #292420;
+  --sar-color-auto-2c1a1d: #292420;
+  --sar-color-auto-333333: #292420;
+  --sar-color-auto-353a3c: #292420;
+  --sar-color-auto-444444: #292420;
+  --sar-color-auto-4d4d4d: #6c6762;
+  --sar-color-auto-555555: #6c6762;
+  --sar-color-auto-666666: #6c6762;
+  --sar-color-auto-6d2c34: #292420;
+  --sar-color-auto-777777: #6c6762;
+  --sar-color-auto-8a2535: #292420;
+  --sar-color-auto-aaaaaa: #6c6762;
+  --sar-color-auto-b18d59: #ad896c;
+  --sar-color-auto-c9a46b: #ad896c;
+  --sar-color-auto-d8c6a4: #f3eee7;
+  --sar-color-auto-e5e7eb: #ffffff;
+  --sar-color-auto-f0ebe0: #ffffff;
+  --sar-color-auto-f0ebe3: #ffffff;
+  --sar-color-auto-f5f0e8: #ffffff;
+  --sar-color-auto-f5f2ec: #ffffff;
+  --sar-color-auto-faf7f2: #f3eee7;
+  --sar-color-auto-ff6568: #ad896c;
+  --sar-color-auto-fff7eb: #f3eee7;
+  --sar-font-body: General Sans, sans-serif;
+  --sar-font-heading: Libre Caslon Text, serif;
+  --sar-font-font-1: General Sans, sans-serif;
+  --sar-font-font-2: General Sans, sans-serif;
+  --sar-font-font-3: var(--default-font-family,ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+  --sar-font-font-4: General Sans, sans-serif;
+}
+
+/* Homepage photography */
+.atrey-hero-photo,
+.atrey-hero-photo::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.atrey-hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 66% center;
+}
+
+.atrey-hero-photo::after {
+  content: "";
+  background: linear-gradient(90deg, rgba(28, 22, 18, 0.92), rgba(28, 22, 18, 0.66) 38%, rgba(28, 22, 18, 0.1) 75%);
+}
+
+@media (max-width: 767px) {
+  .atrey-hero-photo::after {
+    background: rgba(28, 22, 18, 0.65);
+  }
+}
+
+#about-us img[src$="office-portrait.png"] {
+  object-position: center 75%;
+}
